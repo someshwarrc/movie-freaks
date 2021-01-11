@@ -3,6 +3,7 @@ const axios = require("axios");
 const express = require("express");
 const app = express();
 const port = 3000;
+const PORT = process.env.PORT;
 const OMDBAPI = "http://www.omdbapi.com/";
 
 app.use(express.static("./asset/"));
@@ -70,6 +71,6 @@ app.get("/id/:id", (req, res) => {
     });
 });
 
-app.listen(port, function () {
-  console.log(`your app has started on port http://localhost:${port}`);
+app.listen(PORT || port, function () {
+  console.log(`your app is running on ${PORT || port}`);
 });

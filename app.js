@@ -2,9 +2,11 @@ const axios = require("axios");
 
 const express = require("express");
 const app = express();
-const port = 3000;
+
+require("dotenv").config();
 const PORT = process.env.PORT;
 const OMDBAPI = "http://www.omdbapi.com/";
+const API_KEY = process.env.API_KEY;
 
 app.use(express.static("./asset/"));
 app.use(express.static("./views"));
@@ -32,7 +34,7 @@ app.get("/:search", (req, res) => {
   axios
     .get(OMDBAPI, {
       params: {
-        apikey: "ced9c61a",
+        apikey: `${API_KEY}`,
         s: query,
         page: 1,
       },
@@ -42,6 +44,7 @@ app.get("/:search", (req, res) => {
         success: resp.data.Response === "True" ? true : false,
         query: query,
         results: resp.data.Search,
+        API_KEY: API_KEY,
       });
     })
     .catch((err) => {
@@ -54,7 +57,7 @@ app.get("/id/:id", (req, res) => {
   axios
     .get(OMDBAPI, {
       params: {
-        apikey: "ced9c61a",
+        apikey: `${API_KEY}`,
         i: req.params.id,
         plot: "full",
       },

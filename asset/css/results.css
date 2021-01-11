@@ -1,0 +1,62 @@
+*:not(.fas .fab) {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+}
+
+.hidden {
+  opacity: 0 !important;
+}
+
+.fa-search {
+  transform: scale(-1, 1) !important;
+}
+
+.bg {
+  background: #b4f388;
+}
+
+.bg-none {
+  background: none !important;
+}
+
+.card {
+  height: auto;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s;
+}
+
+.card:hover .card-img {
+  filter: blur(3px);
+}
+
+.card-img-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  cursor: pointer;
+  transition: all 0.5s;
+  z-index: 9999;
+}
+
+.footer {
+  height: 2rem;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.footer .fas {
+  color: rgba(224, 11, 11, 0.404);
+}
+
+.footer:hover .fas {
+  color: rgba(224, 11, 11, 0.7);
+}

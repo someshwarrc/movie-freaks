@@ -101,9 +101,9 @@
         }).done((resp) => {
           if (resp.Response === "False") {
             // $(this).addClass("invisible");
-            $(this).unbind("click");
+            $(this).unbind("click"); // removes click event listener for the button
             $(this)
-              .removeClass("btn-outline-info btn")
+              .removeClass("btn-outline-info btn") // removes btn class and changes the btn to an alert
               .addClass("alert alert-warning text-center font-weight-bold");
             $(this).html("Sorry! No more results found");
             // $(".footer").prepend("<div>No more results</div>");
@@ -122,6 +122,7 @@
                             <h3 class="card-title">${element.Title}</h3>
                             <p class="card-text">${element.Year}</p>
                         </div>
+                        <span class="invisible">${element.imdbID}</span>
                     </div>
                 </div>`);
             });
